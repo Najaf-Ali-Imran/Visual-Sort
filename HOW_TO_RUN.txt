@@ -1,0 +1,178 @@
+======================================================
+  VisualSort — HOW TO RUN (Step-by-Step Guide)
+  COAL Final Project
+======================================================
+
+------------------------------------------------------
+  REQUIREMENTS (Must be installed before running)
+------------------------------------------------------
+
+  1. Node.js  (v18 or newer)
+     Download from: https://nodejs.org
+     Verify install: open CMD and type  ->  node --version
+
+  2. npm (comes bundled with Node.js automatically)
+     Verify install: open CMD and type  ->  npm --version
+
+  NOTE: The Assembly .exe (bin/coal_project.exe) is
+  already pre-compiled. You do NOT need MASM or any
+  assembler installed to run the project.
+
+------------------------------------------------------
+  PROJECT FOLDER STRUCTURE
+------------------------------------------------------
+
+  Visual-Sort/
+  ├── Backend/
+  │   └── SortVisualizer.asm     <- x86 MASM source code
+  ├── bin/
+  │   └── coal_project.exe       <- Compiled Assembly backend
+  ├── public/
+  │   ├── index.html             <- Landing page
+  │   └── visualizer.html        <- Main visualizer app
+  ├── server.js                  <- Node.js backend server
+  ├── package.json
+  ├── HOW_TO_RUN.txt             <- You are reading this!
+  └── VIVA_PITCH.md              <- Project documentation
+
+------------------------------------------------------
+  STEP 1 — OPEN A TERMINAL / COMMAND PROMPT
+------------------------------------------------------
+
+  Option A — Using File Explorer:
+    - Navigate to the Visual-Sort folder
+    - Hold SHIFT and right-click anywhere in the folder
+    - Select "Open PowerShell window here"
+      OR "Open Command Prompt window here"
+
+  Option B — Manual:
+    - Press  Win + R
+    - Type   cmd   and press Enter
+    - Type the following and press Enter:
+        cd "C:\Users\Najaf\Downloads\Coal_Prj\Visual-Sort"
+
+------------------------------------------------------
+  STEP 2 — INSTALL DEPENDENCIES (First time only)
+------------------------------------------------------
+
+  Type the following command and press Enter:
+
+      npm install
+
+  Wait for it to finish. You will see a progress bar.
+  This only needs to be done ONCE.
+
+------------------------------------------------------
+  STEP 3 — START THE SERVER
+------------------------------------------------------
+
+  Type the following command and press Enter:
+
+      npm start
+
+  You should see output like:
+
+      [SERVER] VisualSort API running on port 3001
+      [SERVER] Open: http://localhost:3001
+
+  The server is now running. Do NOT close this terminal
+  window while using the app.
+
+------------------------------------------------------
+  STEP 4 — OPEN THE APP IN A BROWSER
+------------------------------------------------------
+
+  Open any web browser (Chrome recommended) and go to:
+
+      http://localhost:3001
+
+  This will open the landing page.
+  Click "Start Visualizing" to open the main app.
+
+  OR go directly to the visualizer:
+
+      http://localhost:3001/visualizer.html
+
+------------------------------------------------------
+  STEP 5 — USING THE VISUALIZER
+------------------------------------------------------
+
+  1. Select an algorithm from the top tabs:
+       Bubble Sort | Selection Sort | Insertion Sort
+       Quick Sort  | Merge Sort
+
+  2. Choose an array mode from the left panel:
+       Random   — Random shuffled array
+       Sorted   — Already sorted (best case)
+       Reversed — Reverse sorted (worst case)
+       Custom   — Type your own numbers (comma separated)
+                  Hex values like 0x1A are also supported!
+
+  3. Use the bottom playback controls:
+       ▶  Play        — Auto-run the animation
+       ⏸  Pause       — Freeze the animation
+       ⏭  Step fwd    — Advance one instruction at a time
+       ⏮  Step back   — Go back one step
+       ⏪  Rewind      — Reset to unsorted state
+       ⏩  Jump to end — Skip to fully sorted result
+       🔊  Sound       — Toggle audio mode on/off
+
+  4. Watch the right panel for:
+       ASM CODE    — Highlighted assembly code (live)
+       STACK       — Recursive call stack depth
+       COMPLEXITY  — Live comparison count graph
+
+  5. Click COMPARE (top right) to race two algorithms!
+
+------------------------------------------------------
+  STOPPING THE SERVER
+------------------------------------------------------
+
+  Go back to the terminal window and press:
+
+      Ctrl + C
+
+  This will stop the Node.js server.
+
+------------------------------------------------------
+  TROUBLESHOOTING
+------------------------------------------------------
+
+  PROBLEM: "npm is not recognized as a command"
+  SOLUTION: Node.js is not installed. Download it from
+            https://nodejs.org and restart your terminal.
+
+  PROBLEM: "Port 3001 is already in use"
+  SOLUTION: Another instance of the server is already
+            running. Close it in Task Manager or run:
+                netstat -ano | findstr :3001
+            Then kill the process using its PID.
+
+  PROBLEM: Page loads but shows "API Offline"
+  SOLUTION: This is normal — it just means the Assembly
+            .exe backend did not run yet. The JavaScript
+            simulation will handle the sorting instead.
+            All features still work normally.
+
+  PROBLEM: Bars do not appear / page is blank
+  SOLUTION: Make sure you are visiting the correct URL:
+                http://localhost:3001/visualizer.html
+            Try pressing Ctrl + Shift + R to hard refresh.
+
+------------------------------------------------------
+  QUICK REFERENCE COMMANDS
+------------------------------------------------------
+
+  Install dependencies (first time only):
+      npm install
+
+  Start the server:
+      npm start
+
+  Stop the server:
+      Ctrl + C
+
+  URL for the app:
+      http://localhost:3001/visualizer.html
+
+======================================================
